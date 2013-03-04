@@ -1,0 +1,12 @@
+{
+    "browser": true,
+    "jquery": true,
+    "node": true,
+    "es5": true,
+    "strict": true,
+    "curly": false,
+    "eqeqeq": true,
+    "eqnull": true,
+    "expr": true,
+    "bitwise": true
+}

@@ -1,0 +1,596 @@
+" General"-v-
+" ------------------------------------------------------------------------------
+set encoding=utf-8
+set termencoding=utf-8
+set fileformats=unix,mac,dos
+set history=300
+set backupdir=~/.vim/tmp,/tmp
+set directory=~/.vim/tmp,/tmp
+
+" Putting this here instead of Mappings because order matters.
+let mapleader = " "
+" --------------------------------------------------------------------------"-^-
+
+" Plugins "-v-
+" ------------------------------------------------------------------------------
+filetype off
+runtime bundle/pathogen/autoload/pathogen.vim
+call pathogen#infect()
+filetype plugin indent on
+
+runtime macros/matchit.vim
+
+" Fugitive
+augroup fugitive_buffers
+  autocmd!
+  autocmd BufReadPost fugitive://* set bufhidden=delete
+augroup END
+
+" NERDTree
+nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
+let NERDTreeWinSize=35
+let NERDTreeSortOrder=['\/$']
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=1
+let NERDTreeQuitOnOpen=1
+let NERDTreeShowHidden=0
+let NERDTreeChDirMode=2
+let NERDTreeIgnore=['\.git$','\.DS_Store$','\.dropbox$','\.gem$','\.Trash$']
+let NERDTreeIgnore+=['\.Xcode$','\.cups$','\.dvdcss$','\.CFUserTextEncoding$']
+
+" NERDCommenter
+let NERDSpaceDelims=1
+
+" Syntastic
+let g:syntastic_check_on_open=1
+let g:syntastic_echo_current_error=0
+let g:syntastic_enable_signs=0
+let g:syntastic_enable_highlighting=0
+" let g:syntastic_stl_format = '✖ │'
+let g:syntastic_stl_format = '✘ │'
+
+" CtrlP
+let g:ctrlp_map=''
+let g:ctrlp_max_height=15
+let g:ctrlp_cache_dir='$HOME/.vim/ctrlp_cache'
+let g:ctrlp_switch_buffer=0
+let g:ctrlp_clear_cache_on_exit=0
+let g:ctrlp_user_command = {
+            \ 'types': {
+            \ 1: ['.git/', 'cd %s && git ls-files --exclude-standard -co'],
+            \ },
+            \ 'fallback': 'find %s -type f'
+            \ }
+nnoremap <Leader>p :CtrlP<CR>
+nnoremap <Leader>r :CtrlPMRUFiles<CR>
+nnoremap <Leader>b :CtrlPBuffer<CR>
+
+" Tabular
+nnoremap <Leader>a= :Tabularize /=<CR>
+vnoremap <Leader>a= :Tabularize /=<CR>
+nnoremap <Leader>a" :Tabularize /"<CR>
+vnoremap <Leader>a" :Tabularize /"<CR>
+nnoremap <Leader>a: :Tabularize /:\zs<CR>
+vnoremap <Leader>a: :Tabularize /:\zs<CR>
+nnoremap <Leader>A: :Tabularize /:<CR>
+vnoremap <Leader>A: :Tabularize /:<CR>
+
+" DelimitMate
+let delimitMate_expand_cr=1
+
+" snipMate
+let g:snips_author='Dido Arellano'
+let g:snippets_dir='~/dotfiles/vim/snippets/'
+
+" Indent Guides
+let g:indent_guides_guide_size=1
+let g:indent_guides_start_level=2
+" --------------------------------------------------------------------------"-^-
+
+" Vim UI"-v-
+" ------------------------------------------------------------------------------
+syntax on
+set synmaxcol=800                        " Stop highlighting beyond this column
+set t_Co=256                             " 256 colors ought to be enough for everyone
+set background=dark
+colorscheme jellybeans
+
+set visualbell                           " Don't make noise
+set number
+set cmdheight=1                          " Number of lines used for the command line
+set cursorline
+
+" Only active window gets a cursorline
+augroup cursorline
+  autocmd!
+  autocmd WinEnter * setlocal cursorline
+  autocmd WinLeave * setlocal nocursorline
+augroup END
+
+set showmatch                            " Highlight matching pairs
+
+set list
+set listchars+=tab:▸\ ,eol:\ ,trail:⋅
+" set listchars+=eol:¬
+set listchars+=precedes:«,extends:»
+set showbreak=➜\ ➜\                      " Comment to prevent space from being trimmed
+set fillchars=vert:⎢,diff:-
+
+" Highlight evil trailing whitespace
+highlight TrailingWhitespace ctermfg=red guifg=red
+augroup trailing_whitespace
+  autocmd!
+  autocmd BufEnter    * match TrailingWhitespace /\s\+$/
+  autocmd InsertEnter * match TrailingWhitespace /\s\+\%#\@<!$/
+  autocmd InsertLeave * match TrailingWhiteSpace /\s\+$/
+augroup END
+
+" Folding
+set foldmethod=marker
+set foldmarker=-v-,-^-
+
+" Statusline"-v-
+set laststatus=2
+set statusline=
+set statusline+=\ %{(&modified)?'✚\ ':''}%t
+set statusline+=\ │
+set statusline+=%{strlen(fugitive#statusline())?
+            \'\ ±\ '.fugitive#statusline()[5:-3].'\ │':
+            \''}
+set statusline+=\ %{SyntasticStatuslineFlag()}
+set statusline+=%=
+set statusline+=\ │
+set statusline+=\ %{strlen(&filetype)?
+            \'λ\ '.&filetype:
+            \'txt'}
+set statusline+=\ │
+set statusline+=\ %c⋅%l\ ✫
+set statusline+=\ %L\ ✫\ %P
+set statusline+=\ %{winnr('$')!=1?
+            \'⎣'.winnr().'⎤':
+            \''}
+"-^-
+
+" Titlestring"-v-
+set titlestring=
+set titlestring+=\%t
+set titlestring+=\ \│
+set titlestring+=\ %{\ substitute(expand('%:p:h'),'/Users/Dido','~','g')}
+" set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servername}
+"-^-
+
+" Wildmenu"-v-
+set wildmenu
+set wildmode=list:longest,full
+set wildignore+=*.DS_Store
+set wildignore+=.git,.hg,.svn
+set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.bmp,*.ico
+set showcmd                     " Show partial commands as I type
+set shortmess=atI               " Shorten cli text and other info tokens
+"-^-
+
+" Foldtext"-v-
+set foldtext=FoldText()
+function! FoldText()
+  " TODO Return foldtext() default if filetype is org(?)
+
+  " return foldtext()
+  " Adapted from Steve Losh's vimrc
+  " https://bitbucket.org/sjl/dotfiles/src/72ed0a7f6ea9/vim/.vimrc#cl-307
+  let line = '➔ ' . split(foldtext(), ':')[-1]
+
+  let nucolwidth = &fdc + &number * &numberwidth
+  let windowwidth = winwidth(0) " - nucolwidth - 3
+  let foldedlinecount = '⎣' . (v:foldend - v:foldstart + 1)  . '⎤'
+
+  " expand tabs into spaces
+  " let onetab = strpart('        ', 0, &tabstop)
+  " let line = substitute(line, '\t', onetab, 'g')
+
+  " I have no idea what this does. Commenting it out doesn't seem to affect
+  " anything.
+  " let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
+
+  let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
+  return line . repeat("⎯", fillcharcount) . ' ' . foldedlinecount
+endfunction
+"-^-
+
+if has("gui_running")
+    set guicursor+=a:blinkon0         " Stop the blinking
+    set go-=T                         " Hide toolbar
+    set go-=L                         " Hide left scroll bar when splitting
+    set go-=r                         " Hide right scroll bar
+    set go+=c                         " Console dialogs instead of popup dialogs
+
+    " Prevents resizing the frame when sourcing $MYVIMRC
+    augroup on_gui_vim_enter
+      autocmd!
+      autocmd VimEnter * set columns=102
+    augroup END
+
+    if has("gui_macvim")
+        set guifont=Menlo:h11
+        set linespace=3               " Lineheight / Leading
+        set fuoptions=maxvert,maxhorz
+    endif
+endif
+" --------------------------------------------------------------------------"-^-
+
+" Window/Buffer behavior"-v-
+" ------------------------------------------------------------------------------
+set hidden                      " Enable unsaved buffers
+set splitbelow
+set scrolloff=4                 " Vertically scroll x lines before end
+set sidescroll=1                " Minimum # of columns to scroll by
+set sidescrolloff=4             " Horizontally scroll x lines before end
+" --------------------------------------------------------------------------"-^-
+
+" Editing behavior"-v-
+" ------------------------------------------------------------------------------
+set autoread
+set clipboard=unnamed           " Use the system clipboard
+set backspace=indent,eol,start  " Sane backspace
+set virtualedit+=block
+set nowrap                      " Turn off wrapping
+set linebreak                   " Word wrap visually
+
+" Indentation
+set autoindent
+set expandtab                   " Make spaces instead of tabs
+set tabstop=4                   " How many columns a tab counts for
+set shiftwidth=4                " # of columns per indent
+set softtabstop=4               " How many columns VIM uses for tabs
+set shiftround                  " Round indent to multiple of shiftwidth
+
+" Search
+set incsearch                   " Incremental search
+set ignorecase                  " Case insensitive
+set smartcase                   " Search explicit caps
+set hlsearch                    " Highlight search results
+" --------------------------------------------------------------------------"-^-
+
+" Functions"-v-
+" ------------------------------------------------------------------------------
+function! KillBuffKeepWin()"-v-
+  let currentBuf = bufnr('%')
+  let currentWin = winnr()
+  let windowCount = winnr('$')
+  let bufDelCmd = ':bdelete'
+
+  if getbufvar(currentBuf, '&modified')
+    let writeIt = confirm('Save changes to file before closing?',
+          \ "&Save\n&Cancel\n&Don't Save")
+    " 1 == Save, 2 == Cancel, 3 == Don't Save
+    if writeIt == 2
+      return
+    elseif writeIt == 1
+      update
+    else
+      let bufDelCmd .= '!'
+    endif
+  endif
+
+  while windowCount
+    if currentBuf == (winbufnr(windowCount))
+      exe windowCount . ':wincmd w'
+      let nextBuf = buflisted(bufnr('#')) ? bufnr('#') : bufnr('*Scratch*')
+
+      if nextBuf == currentBuf
+        bnext
+      elseif nextBuf > 0
+        exe nextBuf . 'buffer'
+      else
+        enew
+      endif
+    endif
+    let windowCount -= 1
+  endwhile
+
+  exe currentBuf . bufDelCmd
+  exe currentWin . ':wincmd w'
+endfunction
+"-^-
+function! PutThisBufferInWindowNumber(num)"-v-
+  if a:num > winnr('$') || a:num <= 0
+    echo "There is no window with that number, fool."
+    return
+  endif
+  let currentBuf = bufnr('%')
+  let currentWin = winnr()
+  exe a:num . 'wincmd w'
+  exe currentBuf . 'buffer'
+  exe currentWin . 'wincmd w'
+endfunction
+"-^-
+function! OpenInBrowser(browser)"-v-
+  let file = shellescape(expand("%:p"))
+  silent exe "! open -a " . a:browser " " . file
+endfunction
+"-^-
+" Show syntax highlighting groups for word under cursor"-v-
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+"-^-
+function! ToggleErrorLocList()"-v-
+  let locListExists = 0
+
+  if &buftype == 'quickfix'
+    let locListExists = 1
+  endif
+
+  let curWindow = winnr()
+  exe 'wincmd j'
+
+  if &buftype == 'quickfix'
+    let locListExists = 1
+  endif
+
+  if locListExists
+    exe 'lclose'
+  else
+    exe curWindow . 'wincmd w'
+    exe 'silent! Errors'
+  endif
+endfunction
+"-^-
+" Gdiff in new tab & restore options properly"-v-
+" fugitive-:Gdiff (vimdiff) messes with scrollbind, wrap, and foldmethod.
+" 'diffoff' resets options to default value, not what I set it to.
+let g:restore_cursor_hi = 0
+let g:old_cursor_hi = ''
+let g:win_size = &lines
+
+function! GdiffInNewTab()
+  if !exists(':Gdiff')
+    echo 'This file is not being tracked by Git.'
+    return
+  endif
+
+  redir => g:old_cursor_hi
+    silent execute 'hi Cursor'
+  redir END
+  let g:old_cursor_hi = split(g:old_cursor_hi, '\n')[0]
+  let g:old_cursor_hi = substitute(g:old_cursor_hi, 'xxx', '', '')
+
+  let cursor_color = 'guibg=#ffffff guifg=#000000'
+  if &background == 'light'
+    let cursor_color = 'guibg=#000000 guifg=#ffffff'
+  endif
+
+  tabnew %
+  exe 'hi Cursor ' . cursor_color
+  let g:restore_cursor_hi = 1
+  execute 'Gdiff'
+endfunction
+
+function! RestoreOptionsAfterDiff()
+  exe 'set lines=' . g:win_size
+  if g:restore_cursor_hi
+    execute 'hi ' . g:old_cursor_hi
+    let g:restore_cursor_hi = 0
+  endif
+endfunction
+"-^-
+" Rename file in current buffer"-v-
+function! Rename(name, bang)
+    " FIXME
+    " "." gets appended when original file doesn't have an extension.
+    let current_file = expand("%:p")
+    let path = expand("%:p:h")
+    let ext = stridx(a:name, ".") == -1 ? "." . expand("%:e") : ""
+    let new_name = path . "/" . a:name . ext
+
+    try
+        silent exe "saveas" . a:bang . " " . new_name
+    catch
+        echoerr v:exception
+        return
+    endtry
+
+    silent exe "bwipeout" . " " . current_file
+    if (delete(current_file) != 0 )
+        echoerr "Could not delete " . current_file
+    endif
+endfunc
+"-^-
+" --------------------------------------------------------------------------"-^-
+
+" Other mappings"-v-
+" ------------------------------------------------------------------------------
+nnoremap <silent> <C-w><C-k> :call KillBuffKeepWin()<CR>
+nnoremap <silent> <C-w>k     :call KillBuffKeepWin()<CR>
+nnoremap <C-w><C-p> :call PutThisBufferInWindowNumber()<Left>
+nnoremap <C-w>p     :call PutThisBufferInWindowNumber()<Left>
+command! FF :call OpenInBrowser("Firefox")
+command! Chrome :call OpenInBrowser("Google\\ Chrome\\ Canary")
+" nnoremap <> :call <SID>SynStack()<CR>
+nnoremap <silent> <F12> :call ToggleErrorLocList()<CR>
+cabbrev gd :call GdiffInNewTab()
+
+command! -nargs=* -bang Rename :call Rename("<args>", "<bang>")
+
+nnoremap ; :
+vnoremap ; :
+
+nnoremap <C-w><C-t> :tabclose<CR>
+
+nnoremap + <C-w>+
+nnoremap _ <C-w>-
+
+" Faster scrolling
+noremap <C-e> 5<C-e>
+noremap <C-y> 5<C-y>
+noremap <C-n> 5<C-n>
+noremap <C-p> 5<C-p>
+
+" Navigate display lines easier when wrapping
+noremap <Down> gj
+noremap <Up> gk
+
+noremap <Left> :bprevious<CR>
+noremap <Right> :bnext<CR>
+
+" Make Y consistent with D, C, etc.
+noremap Y y$
+
+" Faster window traversal
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+
+nnoremap <silent><Leader>s :silent :nohlsearch<CR>
+
+" Reselect pasted text
+nnoremap gp `[v`]
+
+" Center search occurence in screen
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" Insert blank lines while staying in normal mode
+nnoremap <CR> o<ESC>
+nnoremap <S-CR> O<ESC>
+
+" Remap over man lookup. Make it work like the reverse of J
+nnoremap K i<CR><ESC>g;
+
+" Quickly change working directory to buffer's parent directory
+cnoremap cwd lcd %:p:h
+
+" Save file that requires root privilege
+cnoremap w!! %!sudo tee > /dev/null %
+
+" Expand path of current buffer
+cnoremap %% <C-R>=expand('%:h') . '/'<CR>
+
+" Emacs-like bindings for command-line
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+
+" Quick access to files
+command! Vimrc  :e ~/code/dotfiles/vim/vimrc.link
+command! Gvimrc :e ~/code/dotfiles/vim/gvimrc.link
+command! Dump   :e ~/Desktop/dump.md
+
+" Delete trailing whitespace
+command! Trim %s/\s*$//g | nohlsearch | normal ``
+
+" Toggle wrapping. Toggle list too because list disables linebreak.
+command! Wrap set wrap! list!
+
+" Fix my fat pinky
+inoremap <C-]> <ESC>
+
+" Emacs-like bindings for insert mode
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+" --------------------------------------------------------------------------"-^-
+
+" Filetype stuff"-v-
+" ------------------------------------------------------------------------------
+" HTML
+augroup ft_html
+  autocmd!
+  autocmd FileType html let b:delimitMate_matchpairs = "(:),[:],{:}"
+augroup END
+
+" Javascript
+augroup ft_javascript
+  autocmd!
+  autocmd BufNewFile,BufRead *.json set ft=javascript
+  autocmd FileType js set ft=javascript
+  " autocmd BufRead,BufNewFile jq.*.js set ft=javascript syntax=jquery
+augroup END
+
+" Python
+augroup ft_python
+augroup END
+
+" Markdown
+augroup ft_markdown
+  autocmd!
+  autocmd BufNewFile,BufRead *.md,*.mdown,*.markdown set ft=markdown
+  autocmd FileType markdown nnoremap <buffer> <Leader>= yypVr=
+  autocmd FileType markdown nnoremap <buffer> <Leader>- yypVr-
+  autocmd FileType markdown let b:delimitMate_quotes="\" ' _"
+augroup END
+
+" Apache htaccess
+augroup ft_apache
+  autocmd!
+  autocmd BufNewFile,BufRead htaccess set ft=apache
+augroup END
+
+" Gitcommit
+augroup ft_gitcommit
+  autocmd!
+  autocmd BufNewFile,BufRead ticgitng* set ft=gitcommit
+  autocmd FileType gitcommit setlocal colorcolumn=51,73 textwidth=72
+augroup END
+
+" Toggle buffer-local spell check
+augroup speelchek
+  autocmd!
+  autocmd BufNewFile,BufRead *.txt,*.csv setlocal spell
+  autocmd FileType markdown,gitcommit setlocal spell
+  autocmd FileType help,vim setlocal nospell
+augroup END
+
+" Hide line numbers on Location List buffers (syntastic)
+augroup hide_linenumbers
+  autocmd!
+  autocmd FileType qf setlocal nonumber
+augroup END
+
+augroup two_space_indents
+  autocmd!
+  autocmd FileType coffee,html,jade,css,vim,yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
+augroup END
+
+augroup semicolon_terminator
+  autocmd!
+  autocmd FileType javascript,css,php inoremap <buffer> ;;
+        \ <C-O>:call setline(line("."), getline(".") . ';')<CR>
+augroup END
+
+function! Toggle_CR_Mapping(action)
+  if &filetype != 'qf'
+    return
+  endif
+  if a:action == 'unmap'
+    unmap <CR>
+  else
+    nnoremap <CR> o<ESC>
+  endif
+endfunction
+
+augroup cr_in_quickfix
+  autocmd!
+  autocmd BufEnter * call Toggle_CR_Mapping('unmap')
+  autocmd BufLeave * call Toggle_CR_Mapping('remap')
+augroup END
+
+" --------------------------------------------------------------------------"-^-
+
+" Other autocmds"-v-
+" ------------------------------------------------------------------------------
+" Open cursor at last edit position
+augroup restore_cursor_position
+  autocmd!
+  autocmd BufReadPost *
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal! g`\"" |
+  \ endif
+augroup END
+
+augroup on_tab_leave
+  autocmd!
+  autocmd TabLeave * call RestoreOptionsAfterDiff()
+augroup END
+" --------------------------------------------------------------------------"-^-

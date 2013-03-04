@@ -1,0 +1,42 @@
+[user]
+    name = Dido Arellano
+    email = dido@semicolonstudios.com
+
+[core]
+    editor = vim
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = true
+    pager = true
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[alias]
+    s = status
+    l = log --graph --pretty='format:%C(magenta)%h%Cred%d%Creset %s.%C(white) %an, %ar%Creset'
+    lrecent = log --since='yesterday' --author='Dido' --pretty=format:'%C(magenta)%h %C(white)%ar %Creset%s'
+    fr = !git fetch && git rebase origin/master
+    co = checkout
+    br = branch
+    ds = diff --cached
+    dc = diff --cached
+
+# vim:ft=gitconfig

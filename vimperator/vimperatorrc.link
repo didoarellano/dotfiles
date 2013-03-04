@@ -1,0 +1,32 @@
+set titlestring=
+set gui=none,tabs
+set nosb
+set newtab=all
+set focuscontent=false
+set followhints=1
+set showstatuslinks=0
+
+" Modify these. Move \bnext and \bprev later?
+set nextpattern="\bnext,^>$,^(>>|»)$,^(>|»),(>|»)$,\bmore\b"
+set previouspattern="\bprev|previous\b,^<$,^(<<|«)$,^(<|«),(<|«)$"
+
+" Smooth scrolling
+" nnoremap j <Down><Down><Down><Down><Down>
+" nnoremap k <Up><Up><Up><Up><Up>
+
+nnoremap j 5j
+nnoremap k 5k
+nnoremap h 5h
+nnoremap l 5l
+nnoremap ; :
+nnoremap : ;
+nnoremap < :tabmove! -1<CR>
+nnoremap > :tabmove! +1<CR>
+nmap d <Nop>
+
+
+hi StatusLine font-size: 12px; color: #444; padding: 0 15px;
+hi CmdLine font-size: 12px;
+hi CompGroup font-size: 12px;
+
+" vim:ft=vim

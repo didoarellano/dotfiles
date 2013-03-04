@@ -2,3 +2,13 @@ remove Lock = Caps_Lock
 remove Control = Control_L
 keysym Caps_Lock = Control_L
 add Control = Control_L
+
+! Left command on MBP
+clear Mod4
+keycode 133 = Meta_L
+add mod4 = Meta_L
+
+! Left alt/option on MBP
+clear Mod1
+keycode 64 = Super_L
+add mod1 = Super_L

@@ -1,14 +1,27 @@
-remove Lock = Caps_Lock
-remove Control = Control_L
-keysym Caps_Lock = Control_L
-add Control = Control_L
+! Using keycodes instead of keysyms seems more reliable. This should be fine as
+! long as all our future keyboards have the same keycode table.
+!
+! Fucking xmodmap, how does it work?
 
-! Left command on MBP
-clear Mod4
-keycode 133 = Meta_L
-add mod4 = Meta_L
-
-! Left alt/option on MBP
+clear Lock
+clear Control
 clear Mod1
+clear Mod4
+
+! Caps Lock
+keycode 66 = Control_L
+
+! Left & right Option/Alt keys
 keycode 64 = Super_L
-add mod1 = Super_L
+keycode 108 = Super_R
+
+! Left & right Command keys
+keycode 133 = Meta_L
+keycode 134 = Meta_R
+
+! MBP bottow-row enter key
+! keycode 104 =
+
+add Control = Control_L Control_R
+add Mod1 = Super_L Super_R
+add Mod4 = Meta_L Meta_R

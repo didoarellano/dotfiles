@@ -38,6 +38,9 @@ bindsym $mod+Shift+q kill
 # bindsym Mod4+space exec --no-startup-id i3-dmenu-desktop
 bindsym Mod4+space exec dmenu_run -nb "#000000" -nf "#cccccc" -sb "#4c7899"
 
+# Turn off focus follows mouse
+focus_follows_mouse no
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down

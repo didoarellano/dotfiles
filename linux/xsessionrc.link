@@ -12,3 +12,8 @@ REDSHIFTCONF=~/.redshift.conf
 if program_exists redshift && [ -e $REDSHIFTCONF ]; then
     redshift -c $REDSHIFTCONF &
 fi
+
+# NetworkManager applet (appears in systray)
+if program_exists nm-applet; then
+    nm-applet &
+fi

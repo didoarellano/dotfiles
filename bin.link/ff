@@ -1,0 +1,14 @@
+#!/bin/bash
+
+firefox=$HOME/lib/firefox/firefox
+profile=default
+
+args=$*
+cmd="$firefox "
+
+if ! [[ $args =~ "-ProfileManager" ]]; then
+    cmd="$cmd -p $profile "
+fi
+
+cmd="$cmd $args"
+exec $cmd & > /dev/null 2>&1

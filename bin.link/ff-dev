@@ -1,0 +1,7 @@
+#!/bin/bash
+
+firefox=$HOME/lib/firefox/firefox
+profile=dev
+
+cmd="$firefox -p $profile $*"
+exec $cmd & > /dev/null 2>&1

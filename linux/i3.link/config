@@ -148,3 +148,6 @@ bindsym $mod+Right resize grow width 5px or 5 ppt
 bar {
         status_command ~/.i3/conky-i3bar
 }
+
+# Floatables
+for_window [class="Xfce4-notifyd"] floating enable

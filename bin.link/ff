@@ -1,14 +1,52 @@
 #!/bin/bash
 
+# TODO
+# - Consider using aurora for the dev profile.
+# - Get list of profiles from ~/.mozilla/firefox to populate $profiles array
+# - If firefox instance exists, open a new window in current workspace
+# - Figure out how to deal with this scenario:
+#     Say we have default and dev firefox instances running. When we try to open
+#     a new window in a specific profile via this script, firefox will open that
+#     window in the "profile instance" that was launched first.
+#       i.e. ff default was launched first, then ff dev. When we execute `ff
+#       dev, we want a new window in the dev profile instance. What firefox does
+#       instead is open that window in the default instance because it was
+#       launched first.
+
 firefox=$HOME/lib/firefox/firefox
+profiles=(default dev)
+
+in_array () {
+  local e
+  for e in "${@:2}"; do [[ "$e" == "$1" ]] && return 0; done
+  return 1
+}
+
+# Default to default profile even when it's not passed in as an argument.
 profile=default
+args="-P $profile $*"
 
-args=$*
-cmd="$firefox "
-
-if ! [[ $args =~ "-ProfileManager" ]]; then
-    cmd="$cmd -p $profile "
+if [[ $1 == 'pm' ]]; then
+    profile=''
+    args="-ProfileManager ${@:2}"
 fi
 
-cmd="$cmd $args"
+if in_array $1 "${profiles[@]}"; then
+    profile=$1
+    args="-P $1 ${@:2}"
+fi
+
+# If there's already a running firefox instance with the same profile, just open
+# a new window in the current workspace (probably need i3 to do this for
+# us). Otherwise, use the -new-instance flag to force firefox to start a
+# separate instance for that profile.
+
+running_profiles=( $(ps -ef | awk '/firefox/ && !/awk/ {print $10}' | xargs) )
+
+new_flag='-new-instance'
+if in_array $profile "${running_profiles[@]}"; then
+    new_flag='-new-window'
+fi
+
+cmd="$firefox $args $new_flag"
 exec $cmd & > /dev/null 2>&1

@@ -19,7 +19,6 @@ set $mod Mod1
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
 font pango:Inconsolata-dz 8
-new_window pixel 3
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -150,4 +149,9 @@ bar {
 }
 
 # Floatables
-for_window [class="Xfce4-notifyd"] floating enable
+for_window [class="Xfce4-notifyd"] floating enable border 1pixel
+
+# Hide window title in web browsers because they're ugly. They make it easier to
+# spot the active window though, especially if there are multiple title-less
+# windows in a container.
+for_window [window_role="browser"] border 1pixel # pixel 3

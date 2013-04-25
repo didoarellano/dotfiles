@@ -1,0 +1,13 @@
+* Dotfiles
+
+* Todos
+** TODO Clean up Vim config
+*** TODO Purge configuration from the MacVim/gVim days
+    Optimize for terminal use.
+*** TODO Use vundle
+** TODO Switch to vanilla zsh config or fish
+** TODO Merge in emacs.d repository
+** TODO Improve makefile and directory structure
+   - Delete existing symlinks before creating new ones. `make clean`
+   - Config files bound for the .config directory don't work with current
+     structure.

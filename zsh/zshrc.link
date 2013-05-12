@@ -122,5 +122,5 @@ function md() {
     cd "$*"
 }
 
-source "$HOME/.nvm/nvm.sh"
+# source "$HOME/.nvm/nvm.sh"
 alias clip="xclip -selection clipboard"

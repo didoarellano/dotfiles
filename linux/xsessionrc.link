@@ -4,6 +4,8 @@ program_exists() {
     command -v "$1" > /dev/null 2>&1;
 }
 
+xmodmap ~/.xmodmap
+
 if program_exists dropbox; then
     dropbox start &
 fi

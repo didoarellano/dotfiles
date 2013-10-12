@@ -5,6 +5,7 @@
 [core]
     editor = vim
     excludesfile = /home/dido/.gitignore
+    autocrlf = input
 
 [color]
     diff = auto

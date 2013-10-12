@@ -40,5 +40,7 @@
     br = branch
     ds = diff --cached
     dc = diff --cached
+    first = commit --allow-empty -m 'Initial, empty commit'
+    start = !git init && git first
 
 # vim:ft=gitconfig

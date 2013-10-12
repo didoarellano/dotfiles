@@ -2,7 +2,6 @@
     "browser": true,
     "jquery": true,
     "node": true,
-    "es5": true,
     "strict": true,
     "curly": false,
     "eqeqeq": true,

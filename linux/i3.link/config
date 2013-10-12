@@ -35,7 +35,8 @@ bindsym $mod+Shift+q kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym Mod4+space exec --no-startup-id i3-dmenu-desktop
-bindsym Mod4+space exec dmenu_run -nb "#000000" -nf "#cccccc" -sb "#4c7899"
+# bindsym Mod4+space exec dmenu_run -nb "#000000" -nf "#cccccc" -sb "#4c7899"
+bindsym Mod4+space exec gmrun
 
 # Turn off focus follows mouse
 focus_follows_mouse no
@@ -152,6 +153,7 @@ bar {
 for_window [class="Xfce4-notifyd"] floating enable border 1pixel
 for_window [class="Firefox" window_role="About"] floating enable
 for_window [class="Firefox" instance="Update"] floating enable
+for_window [class="Gmrun"] floating enable border 1pixel
 
 # Hide window title in web browsers because they're ugly. They make it easier to
 # spot the active window though, especially if there are multiple title-less

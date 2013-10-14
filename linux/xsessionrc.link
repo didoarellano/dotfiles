@@ -19,3 +19,12 @@ fi
 if program_exists nm-applet; then
     nm-applet &
 fi
+
+if program_exists emacs; then
+    emacs --name org-agenda-files ~/Dropbox/org/dump.org &
+fi
+
+TERM=xfce4-terminal
+if program_exists $TERM && program_exists ncmpcpp; then
+    xfce4-terminal --title=ncmpcpp --command ncmpcpp &
+fi

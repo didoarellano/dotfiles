@@ -113,8 +113,14 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-bindsym $mod+m move scratchpad
-bindsym $mod+o scratchpad show
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+for_window [title="ncmpcpp" instance="xfce4-terminal"] move scratchpad
+bindsym $mod+m [title="ncmpcpp"] scratchpad show
+
+for_window [instance="org-agenda-files"] move scratchpad
+bindsym $mod+o [instance="org-agenda-files"] scratchpad show
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

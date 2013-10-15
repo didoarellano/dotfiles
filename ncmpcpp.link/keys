@@ -1,0 +1,12 @@
+# View defaults at: /usr/share/doc/ncmpcpp/examples/keys
+
+# Don't quit on "q"
+key_quit = 0
+key_home = 'g'
+key_end = 'G'
+key_prev_column = 'h'
+key_next_column = 'l'
+key_move_song_up = 'K'
+key_move_song_down = 'J'
+key_lyrics = 'L'
+key_toggle_lyrics_db = '.'

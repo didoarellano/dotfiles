@@ -1,1 +1,6 @@
 .sass-cache
+
+mpd.link/*
+!mpd.link/mpd.conf
+
+ncmpcpp.link/error.log

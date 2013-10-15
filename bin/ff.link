@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # TODO
-# - Consider using aurora for the dev profile.
 # - Get list of profiles from ~/.mozilla/firefox to populate $profiles array
 # - If firefox instance exists, open a new window in current workspace
 # - Figure out how to deal with this scenario:
@@ -14,6 +13,7 @@
 #       launched first.
 
 firefox=$HOME/lib/firefox/firefox
+aurora=$HOME/lib/aurora/firefox
 profiles=(default dev)
 
 in_array () {
@@ -29,6 +29,10 @@ args="-P $profile $*"
 if [[ $1 == 'pm' ]]; then
     profile=''
     args="-ProfileManager ${@:2}"
+fi
+
+if [[ $1 == 'dev' ]]; then
+    firefox=$aurora
 fi
 
 if in_array $1 "${profiles[@]}"; then

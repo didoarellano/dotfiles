@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # TODO
-# - Get list of profiles from ~/.mozilla/firefox to populate $profiles array
 # - If firefox instance exists, open a new window in current workspace
 # - Figure out how to deal with this scenario:
 #     Say we have default and dev firefox instances running. When we try to open
@@ -14,7 +13,7 @@
 
 firefox=$HOME/lib/firefox/firefox
 aurora=$HOME/lib/aurora/firefox
-profiles=(default dev)
+profiles=(`grep Name= ~/.mozilla/firefox/profiles.ini | cut -d = -f 2`)
 
 in_array () {
   local e

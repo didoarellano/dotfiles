@@ -28,3 +28,7 @@ TERM=xfce4-terminal
 if program_exists $TERM && program_exists ncmpcpp; then
     xfce4-terminal --title=ncmpcpp --command ncmpcpp &
 fi
+
+if program_exists emacs; then
+    emacs --name gtalk --eval '(dido-jabber-connect)' &
+fi

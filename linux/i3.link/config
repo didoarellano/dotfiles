@@ -122,6 +122,9 @@ bindsym $mod+m [title="ncmpcpp"] scratchpad show
 for_window [instance="org-agenda-files"] move scratchpad
 bindsym $mod+o [instance="org-agenda-files"] scratchpad show
 
+for_window [instance="gtalk"] move scratchpad
+bindsym $mod+i [instance="gtalk"] scratchpad show
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode

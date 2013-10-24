@@ -42,5 +42,7 @@
     dc = diff --cached
     first = commit --allow-empty -m 'Initial, empty commit'
     start = !git init && git first
+    changes = !git diff --stat `git log --pretty=format:%H | tail -1`
+
 
 # vim:ft=gitconfig

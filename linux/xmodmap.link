@@ -20,7 +20,7 @@ keycode 133 = Alt_L
 keycode 134 = Alt_R
 
 ! MBP bottow-row enter key
-! keycode 104 =
+keycode 104 = Super_R
 
 add Control = Control_L Control_R
 add Mod1 = Super_L Super_R

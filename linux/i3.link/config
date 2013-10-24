@@ -163,6 +163,7 @@ for_window [class="Xfce4-notifyd"] floating enable border 1pixel
 for_window [class="Firefox" window_role="About"] floating enable
 for_window [class="Firefox" instance="Update"] floating enable
 for_window [class="Gmrun"] floating enable border 1pixel
+for_window [class="Wicd-client.py"] floating enable
 
 # Hide window title in web browsers because they're ugly. They make it easier to
 # spot the active window though, especially if there are multiple title-less

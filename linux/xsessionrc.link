@@ -33,8 +33,8 @@ if program_exists emacs; then
 fi
 
 TERM=xfce4-terminal
-if program_exists $TERM && program_exists ncmpcpp; then
-    xfce4-terminal --title=ncmpcpp --command ncmpcpp &
+if program_exists mpd && program_exists $TERM && program_exists ncmpcpp; then
+    mpd && $TERM --title=ncmpcpp --command ncmpcpp &
 fi
 
 if program_exists emacs; then

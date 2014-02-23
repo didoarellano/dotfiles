@@ -6,6 +6,8 @@ set focuscontent=false
 set followhints=1
 set showstatuslinks=0
 
+set defsearch=duckduckgo
+
 " Modify these. Move \bnext and \bprev later?
 set nextpattern="\bnext,^>$,^(>>|»)$,^(>|»),(>|»)$,\bmore\b"
 set previouspattern="\bprev|previous\b,^<$,^(<<|«)$,^(<|«),(<|«)$"

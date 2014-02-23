@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # TODO
-# - If firefox instance exists, open a new window in current workspace
 # - Figure out how to deal with this scenario:
 #     Say we have default and dev firefox instances running. When we try to open
 #     a new window in a specific profile via this script, firefox will open that
@@ -11,8 +10,13 @@
 #       instead is open that window in the default instance because it was
 #       launched first.
 
-firefox=$HOME/lib/firefox/firefox
-aurora=$HOME/lib/aurora/firefox
+
+# Assumes we create ff-{stable,aurora,nightly} symlinks and that these Firefox
+# channels are installed in the ~/lib directory.
+channel=$(basename $0)
+channel=${channel:3}
+firefox="$HOME/lib/firefox-$channel/firefox"
+
 profiles=(`grep Name= ~/.mozilla/firefox/profiles.ini | cut -d = -f 2`)
 
 in_array () {
@@ -25,27 +29,20 @@ in_array () {
 profile=default
 args="-P $profile $*"
 
-if [[ $1 == 'pm' ]]; then
-    profile=''
-    args="-ProfileManager ${@:2}"
-fi
-
-if [[ $1 == 'dev' ]]; then
-    firefox=$aurora
-fi
-
 if in_array $1 "${profiles[@]}"; then
     profile=$1
     args="-P $1 ${@:2}"
 fi
 
+if [[ $1 == 'pm' ]]; then
+    profile=''
+    args="-ProfileManager ${@:2}"
+fi
+
 # If there's already a running firefox instance with the same profile, just open
-# a new window in the current workspace (probably need i3 to do this for
-# us). Otherwise, use the -new-instance flag to force firefox to start a
-# separate instance for that profile.
-
+# a new window in the current workspace (-new-window flag). Otherwise, open a
+# separate instance (-new-instance flag) with that profile.
 running_profiles=( $(ps -ef | awk '/firefox/ && !/awk/ {print $10}' | xargs) )
-
 new_flag='-new-instance'
 if in_array $profile "${running_profiles[@]}"; then
     new_flag='-new-window'

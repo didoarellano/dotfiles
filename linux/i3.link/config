@@ -162,6 +162,11 @@ bar {
 for_window [class="Xfce4-notifyd"] floating enable border 1pixel
 for_window [class="Firefox" window_role="About"] floating enable
 for_window [class="Firefox" instance="Update"] floating enable
+
+# Pinboard extension
+for_window [class="Firefox" title="about:blank -"] floating enable
+for_window [class="Firefox" title="https://pinboard.in - Pinboard - Save a Bookmark"] floating enable
+
 for_window [class="Gmrun"] floating enable border 1pixel
 for_window [class="Wicd-client.py"] floating enable
 

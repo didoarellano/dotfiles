@@ -24,8 +24,12 @@ if program_exists wicd-gtk; then
     wicd-gtk &
 fi
 
+# Launch emacs instances with fullscreen flag otherwise i3 won't size them
+# correctly as scratchpads. NOTE: We still need to toggle through all the
+# scratchpads for them to resize properly.
+
 if program_exists emacs; then
-    emacs --name org-agenda-files ~/Dropbox/org/dump.org &
+    emacs --fullscreen --name org-agenda-files ~/Dropbox/org/dump.org &
 fi
 
 TERM=xfce4-terminal
@@ -34,5 +38,5 @@ if program_exists $TERM && program_exists ncmpcpp; then
 fi
 
 if program_exists emacs; then
-    emacs --name gtalk --eval '(dido-jabber-connect)' &
+    emacs --fullscreen --name gtalk --eval '(dido-jabber-connect)' &
 fi

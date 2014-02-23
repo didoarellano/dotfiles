@@ -1,5 +1,7 @@
 .sass-cache
 
+ignore
+
 mpd.link/*
 !mpd.link/mpd.conf
 

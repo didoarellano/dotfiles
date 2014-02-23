@@ -16,8 +16,12 @@ if program_exists redshift && [ -e $REDSHIFTCONF ]; then
 fi
 
 # NetworkManager applet (appears in systray)
-if program_exists nm-applet; then
-    nm-applet &
+# if program_exists nm-applet; then
+#     nm-applet &
+# fi
+
+if program_exists wicd-gtk; then
+    wicd-gtk &
 fi
 
 if program_exists emacs; then

@@ -43,6 +43,7 @@ zstyle ':dotzsh:load' dzmodule \
   'spectrum' \
   'utility' \
   'completion' \
+  'ssh' \
   'theme' \
 
 # Set the theme to load.

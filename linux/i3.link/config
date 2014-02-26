@@ -116,6 +116,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
+# quickswitch-i3
+bindsym Mod4+Shift+space exec quickswitch.py --dmenu 'dmenu -i -l 5 -nb "#222222" -nf "#888888" -sb "#5f87af" -sf "#eeeeee"'
+
 for_window [title="ncmpcpp" instance="xfce4-terminal"] move scratchpad
 bindsym $mod+m [title="ncmpcpp"] scratchpad show
 

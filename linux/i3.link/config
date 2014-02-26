@@ -186,3 +186,8 @@ for_window [class="Wicd-client.py"] floating enable
 # Hide window title in Chrom{e,ium} because they're ugly.
 for_window [window_role="browser" class="Google-chrome"] border 1pixel # pixel 3
 for_window [window_role="browser" class="Chromium"] border 1pixel # pixel 3
+
+# Colors
+# class                 border  backgr. text    indicator
+client.focused          #5f87af #5f87af #eeeeee #5f87af
+client.unfocused        #222222 #222222 #888888 #292d2e

@@ -1,3 +1,6 @@
+" -*- mode: vimrc -*-
+" vim:ft=vim
+
 set titlestring=
 set gui=none
 set nosb
@@ -5,6 +8,7 @@ set newtab=all
 set focuscontent=false
 set followhints=1
 set showstatuslinks=0
+set status="input,ssl,location,history,tabcount,position"
 
 set defsearch=duckduckgo
 
@@ -44,10 +48,11 @@ noremap <A-t> <Nop>
 noremap <A-t> :javascript toggleTabBar()<CR>
 noremap <A-l> <Nop>
 noremap <A-l> :javascript toggleNavigation()<CR>
+noremap <C-q> <Nop>
 
+set hlsearch
+noremap <silent> <Esc> :set hlsearch!<CR>:set hlsearch!<CR>
 
 hi StatusLine font-size: 12px; color: #444; padding: 0 15px;
 hi CmdLine font-size: 12px;
 hi CompGroup font-size: 12px;
-
-" vim:ft=vim

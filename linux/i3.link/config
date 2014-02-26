@@ -159,6 +159,16 @@ bindsym $mod+Right resize grow width 5px or 5 ppt
 # finds out, if available)
 bar {
         status_command ~/.i3/conky-i3bar
+        tray_output primary
+
+        colors {
+               background #222222
+               statusline #eeeeee
+               focused_workspace    #5f87af #5f87af #eeeeee
+               # active_workspace     #5f87af #5f87af #eeeeee
+               inactive_workspace   #222222 #222222 #888888
+               urgent_workspace     #e74c3c #e74c3c #111111
+        }
 }
 
 # Floaters

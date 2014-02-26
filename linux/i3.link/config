@@ -183,7 +183,6 @@ for_window [class="Firefox" title="https://pinboard.in - Pinboard - Save a Bookm
 for_window [class="Gmrun"] floating enable border 1pixel
 for_window [class="Wicd-client.py"] floating enable
 
-# Hide window title in web browsers because they're ugly. They make it easier to
-# spot the active window though, especially if there are multiple title-less
-# windows in a container.
-for_window [window_role="browser"] border 1pixel # pixel 3
+# Hide window title in Chrom{e,ium} because they're ugly.
+for_window [window_role="browser" class="Google-chrome"] border 1pixel # pixel 3
+for_window [window_role="browser" class="Chromium"] border 1pixel # pixel 3

@@ -13,6 +13,8 @@
 export DOTZSH="$HOME/code/dotfiles/zsh/lib/dotzsh"
 export DOTZSHLOCAL="$HOME/.zsh.local"
 
+export TERMINAL=roxterm
+
 # Source environment settings
 source "$DOTZSH/env.zsh"
 

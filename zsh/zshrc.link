@@ -24,7 +24,7 @@ zstyle ':dotzsh:module:*' color 'yes'
 zstyle ':dotzsh:module:*' aliases 'yes'
 
 # Auto set the tab and window titles.
-# zstyle ':dotzsh:module:terminal' auto-title 'yes'
+zstyle ':dotzsh:module:terminal' auto-title 'yes'
 
 # Set the Zsh modules to load (man zshmodules).
 # zstyle ':dotzsh:load' zmodule 'attr' 'stat'
@@ -74,6 +74,8 @@ alias dirs="dirs -v"
 # alias xampp="/Applications/XAMPP/xamppfiles/xampp"
 alias l1="ls -1a"
 alias rmdsstore='find . -name *.DS_Store -type f -delete'
+alias g="git"
+alias t="tmux"
 
 # This works okay. The problem is with the prompt and pwd not "following"
 # symlinks, i.e. `cd dotfiles` results in ~/bookmarks/dotfiles not

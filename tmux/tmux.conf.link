@@ -2,55 +2,83 @@
 
 # set-option -g default-command 'reattach-to-user-namespace -l zsh'
 
-set-option -g prefix C-a
-unbind C-b
+set-option -g aggressive-resize on
+unbind-key C-b
 
-set-option -sg escape-time 1
+set-option -g prefix C-z
+unbind-key C-\\
+bind-key C-z send-prefix
+
+# Unprefixed. No worky
+# bind-key -n C-Tab next-window
 
 set-option -g base-index 1
 set-window-option -g pane-base-index 1
+set-option -g renumber-windows on
+
+set-option -g set-titles on
+set-option -g set-titles-string "#T - tmux:#S"
+
+# find session
+# TODO Send switch-client to ALL connected clients (project switching).
+# bind-key C-f command-prompt -p find-session 'switch-client -t %%'
+
+
+set-option -s escape-time 0
 
 set-window-option -g mode-mouse on
 set-option -g mouse-select-pane on
 
-set-window-option -g mode-keys vi
+# set-window-option -g mode-keys vi
 
-set-option -g status-left-length 30
-set-option -g status-right-length 60
+set-option -g utf8 on
+
+set-option -g status off
 set-option -g status-utf8 on
+set-option -g status-bg "#111111"
+set-option -g status-fg "#eeeeee"
+set-option -g status-right ''
 set-option -g status-justify left
+set-option -g window-status-separator ''
 
-set-option -g status-bg black
-set-option -g status-fg white
-set-option -g status-left ''
-set-option -g window-status-format ' #[fg=colour240] #I#[fg=colour231] #W '
-set-option -g window-status-current-format ' #[fg=black,bg=colour4]⮀ #[fg=colour231]#I#[fg=colour232] #W #[bg=black,fg=colour4]⮀'
-set-option -g status-right '#[fg=colour4,bg=black]⮂#[fg=colour232,bg=colour4] #S ⮂#[bg=black] '
-set-option -g pane-border-fg colour0
-set-option -g pane-border-bg colour16
-set-option -g pane-active-border-fg colour4
-set-option -g message-fg black
-set-option -g message-bg colour4
-set-window-option -g mode-bg colour4
-set-window-option -g mode-fg black
+set-option -g status-left-length 100
+set-option -g status-interval 10
+set-option -g status-left '#(~/code/dotfiles/tmux/tmux-status-line.sh)'
+set-option -g window-status-format ''
+set-option -g window-status-current-format ''
 
-bind r source-file ~/.tmux.conf \; display 'tmux.conf reloaded'
-bind C-a send-prefix
+set-option -g pane-border-fg "#222222"
+set-option -g pane-border-bg "#111111"
+set-option -g pane-active-border-fg "#5f87af"
+# set-option -g message-fg black
+# set-option -g message-bg colour4
+# set-window-option -g mode-bg colour4
+# set-window-option -g mode-fg black
 
-bind s split-window -v
-bind v split-window -h
+bind-key r source-file ~/.tmux.conf \; display 'tmux.conf reloaded'
 
-bind h select-pane -L
-bind j select-pane -D
-bind k select-pane -U
-bind l select-pane -R
+bind-key s split-window -v
+bind-key v split-window -h
 
-bind -r H resize-pane -L 5
-bind -r J resize-pane -D 5
-bind -r K resize-pane -U 5
-bind -r L resize-pane -R 5
+bind-key h select-pane -L
+bind-key j select-pane -D
+bind-key k select-pane -U
+bind-key l select-pane -R
 
-unbind p
-bind p paste-buffer
-bind -t vi-copy 'v' begin-selection
-bind -t vi-copy 'y' copy-selection
+# unbind-key p
+# bind-key p paste-buffer
+# bind-key -t vi-copy 'v' begin-selection
+# bind-key -t vi-copy 'y' copy-selection
+
+bind-key b set -g status\; refresh-client -S
+bind-key 1 select-window -t 1\; refresh-client -S
+bind-key 2 select-window -t 2\; refresh-client -S
+bind-key 3 select-window -t 3\; refresh-client -S
+bind-key 4 select-window -t 4\; refresh-client -S
+bind-key 5 select-window -t 5\; refresh-client -S
+bind-key 6 select-window -t 6\; refresh-client -S
+bind-key 7 select-window -t 7\; refresh-client -S
+bind-key 8 select-window -t 8\; refresh-client -S
+bind-key 9 select-window -t 9\; refresh-client -S
+bind-key 0 select-window -t 0\; refresh-client -S
+bind-key c new-window\; refresh-client -S

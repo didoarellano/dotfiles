@@ -29,7 +29,7 @@ fi
 # scratchpads for them to resize properly.
 
 if program_exists emacs; then
-    emacs --fullscreen --name org-agenda-files ~/Dropbox/org/dump.org &
+    emacs --fullscreen --name org-agenda-files ~/Dropbox/org/agenda/dump.org &
 fi
 
 TERM=xfce4-terminal

@@ -9,11 +9,11 @@ override_utf8_locale yes
 
 TEXT
 ,[
-  {"full_text": " ❤ $cpu% ","color": "\#cccccc"},
+  {"full_text": " ❤ $cpu% ","color": "\#eeeeee"},
   {"full_text": " ☢ ${exec xargs -n1 -It expr t / 1000 < /sys/devices/platform/coretemp.0/temp2_input}° C ","color": "\#ffffff"},
-  {"full_text": " ✲ ${exec cat /sys/devices/platform/applesmc.768/fan1_input /sys/devices/platform/applesmc.768/fan2_input | xargs} ", "color":"\#cccccc"},
-  {"full_text": " ≣ $mem ", "color":"\#cccccc"},
-#  {"full_text": " ≈ ${wireless_essid wlan0} ${wireless_link_qual_perc wlan0}% ","color":"\#cccccc"},
-#  {"full_text": " ⚡ $battery_short » $battery_time ","color":"\#cccccc"},
-  {"full_text": " ${time %I:%M %P} ", "color":"\#cccccc"}
+  {"full_text": " ✲ ${exec cat /sys/devices/platform/applesmc.768/fan1_input /sys/devices/platform/applesmc.768/fan2_input | xargs} ", "color":"\#eeeeee"},
+  {"full_text": " ≣ $mem ", "color":"\#eeeeee"},
+#  {"full_text": " ≈ ${wireless_essid wlan0} ${wireless_link_qual_perc wlan0}% ","color":"\#eeeeee"},
+#  {"full_text": " ⚡ $battery_short » $battery_time ","color":"\#eeeeee"},
+  {"full_text": " ${time %I:%M %P} ", "color":"\#eeeeee"}
 ]

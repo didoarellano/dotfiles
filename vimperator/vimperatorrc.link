@@ -5,7 +5,7 @@ set titlestring=
 set gui=none
 set nosb
 set newtab=all
-set focuscontent=false
+set focuscontent
 set followhints=1
 set showstatuslinks=0
 set status="input,ssl,location,history,tabcount,position"

@@ -40,3 +40,7 @@ fi
 if program_exists emacs; then
     emacs --fullscreen --name gtalk --eval '(dido-jabber-connect)' &
 fi
+
+if program_exists bashrun2; then
+    bashrun2 hide &
+fi

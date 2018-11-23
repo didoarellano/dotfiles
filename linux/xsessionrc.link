@@ -1,46 +1,5 @@
 # -*- mode: sh -*-
 
-program_exists() {
-    command -v "$1" > /dev/null 2>&1;
-}
-
-xmodmap ~/.xmodmap
-
-if program_exists dropbox; then
-    dropbox start &
-fi
-
-REDSHIFTCONF=~/.redshift.conf
-if program_exists redshift && [ -e $REDSHIFTCONF ]; then
-    redshift -c $REDSHIFTCONF &
-fi
-
-# NetworkManager applet (appears in systray)
-# if program_exists nm-applet; then
-#     nm-applet &
-# fi
-
-if program_exists wicd-gtk; then
-    wicd-gtk &
-fi
-
-# Launch emacs instances with fullscreen flag otherwise i3 won't size them
-# correctly as scratchpads. NOTE: We still need to toggle through all the
-# scratchpads for them to resize properly.
-
-if program_exists emacs; then
-    emacs --fullscreen --name org-agenda-files ~/Dropbox/org/agenda/dump.org &
-fi
-
-TERM=xfce4-terminal
-if program_exists mpd && program_exists $TERM && program_exists ncmpcpp; then
-    mpd && $TERM --title=ncmpcpp --command ncmpcpp &
-fi
-
-if program_exists emacs; then
-    emacs --fullscreen --name gtalk --eval '(dido-jabber-connect)' &
-fi
-
-if program_exists bashrun2; then
-    bashrun2 hide &
-fi
+export PATH=$HOME/bin:$PATH
+synclient TouchpadOff=1
+$HOME/bin/trackpoint-scroll

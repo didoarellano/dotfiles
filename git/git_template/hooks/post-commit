@@ -1,0 +1,24 @@
+#!/bin/sh
+
+################################################################################
+# RescueTime
+################################################################################
+# REQUIRED FIELDS - Today's date and commit message
+MESSAGE=$(git log -1 HEAD --pretty=format:%s)
+DATE_TODAY=$(date +"%Y-%m-%d")
+
+# OPTIONAL - Label
+LABEL='code commit'
+
+# curl --data "key=$RESCUETIME_API_KEY&highlight_date=$DATE_TODAY&description=$MESSAGE&source=$LABEL" https://www.rescuetime.com/anapi/highlights_post
+
+
+################################################################################
+# git-stats
+################################################################################
+# Copy last commit hash to clipboard on commit
+commit_hash=$(git rev-parse HEAD)
+repo_url=$(git config --get remote.origin.url)
+commit_date=$(git log -1 --format=%cd)
+commit_data="\"{ \"date\": \"$commit_date\", \"url\": \"$repo_url\", \"hash\": \"$commit_hash\" }\""
+git-stats --record "${commit_data}"

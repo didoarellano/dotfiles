@@ -1,1 +1,5 @@
-prefix = ${HOME}
+prefix=/home/dido
+init.author.name="Dido Arellano"
+init.author.email="dido@fat-arrow.com"
+init.author.url="dido.ph"
+init.license="MIT"

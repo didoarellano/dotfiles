@@ -1,4 +1,6 @@
 .sass-cache
+npm-debug.log
+node_modules
 
 ignore
 
@@ -6,3 +8,10 @@ mpd.link/*
 !mpd.link/mpd.conf
 
 ncmpcpp.link/error.log
+
+.tern-port
+.ruby-version
+
+.dir-locals.el
+
+.serverless

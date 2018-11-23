@@ -2,15 +2,15 @@
 " vim:ft=vim
 
 set titlestring=
-set gui=none
-set nosb
+set gui=none,tabs
+set noscrollbars
 set newtab=all
 set focuscontent
 set followhints=1
 set showstatuslinks=0
 set status="input,ssl,location,history,tabcount,position"
 
-set defsearch=duckduckgo
+set defsearch=ddg
 
 " Modify these. Move \bnext and \bprev later?
 set nextpattern="\bnext,^>$,^(>>|»)$,^(>|»),(>|»)$,\bmore\b"
@@ -56,3 +56,18 @@ noremap <silent> <Esc> :set hlsearch!<CR>:set hlsearch!<CR>
 hi StatusLine font-size: 12px; color: #444; padding: 0 15px;
 hi CmdLine font-size: 12px;
 hi CompGroup font-size: 12px;
+
+javascript <<GFY
+function gfyfyURL(url) {
+    if (url.indexOf('.gifv') !== -1) {
+        url = url.slice(0, -1);
+    }
+    return 'http://gfycat.com/fetch/' + url;
+}
+function gfyFetch() {
+    content.location.href = gfyfyURL(content.location.href);
+}
+GFY
+command! gfy javascript gfyFetch()
+
+command! sourcerc :source ~/.vimperatorrc

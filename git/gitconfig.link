@@ -1,11 +1,11 @@
 [user]
     name = Dido Arellano
-    email = dido@semicolonstudios.com
+    email = dido@fat-arrow.com
 
 [core]
-    editor = vim
     excludesfile = /home/dido/.gitignore
     autocrlf = input
+    pager = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -r
 
 [color]
     diff = auto
@@ -38,6 +38,7 @@
     fr = !git fetch && git rebase origin/master
     c = commit
     cm = commit --message
+    cam = commit --all --message
     co = checkout
     br = branch
     ds = diff --cached
@@ -45,8 +46,21 @@
     first = commit --allow-empty -m 'Initial, empty commit'
     start = !git init && git first
     changes = !git diff --stat $(git log --pretty=format:%H | tail -1)
+    cdc = "!d=\"$(date -d \"$1\")\" && shift && \
+        git diff-index --cached --quiet HEAD --ignore-submodules -- && \
+        GIT_COMMITTER_DATE=\"$d\" git commit --amend -C HEAD --date \"$d\"" \
+                || echo >&2 "error: date change failed: index not clean!""\")\""
 
+    watch = !"while :; do clear; git status --short; git --no-pager diff --shortstat; sleep 2; done"
 
-# vim:ft=gitconfig
+    watch2 = "!inotifywait --quiet -mr -e modify,move,create,delete --format \"%f %e\" @/.git . | \
+while read file; do \
+    clear;\
+    git status --short;\
+    git --no-pager diff --shortstat;\
+done;"
+
 [push]
 	default = simple
+[init]
+	templatedir = /home/dido/code/dotfiles/git/git_template

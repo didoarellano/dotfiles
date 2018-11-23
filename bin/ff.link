@@ -11,7 +11,7 @@
 #       launched first.
 
 
-# Assumes we create ff-{stable,aurora,nightly} symlinks and that these Firefox
+# Assumes we create ff-{stable,nightly} symlinks and that these Firefox
 # channels are installed in the ~/lib directory.
 channel=$(basename $0)
 channel=${channel:3}
@@ -49,4 +49,5 @@ if in_array $profile "${running_profiles[@]}"; then
 fi
 
 cmd="$firefox $args $new_flag"
+echo $cmd
 exec $cmd & > /dev/null 2>&1

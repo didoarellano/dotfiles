@@ -1,0 +1,10 @@
+#!/bin/bash
+
+SSID=""
+INTERFACE=$(ip route | awk '/^default/ { print $5 ; exit }')
+
+if ! [[ "$INTERFACE" == "th0" ]]; then
+    SSID=$(/sbin/iwgetid -r)
+fi
+
+echo $SSID

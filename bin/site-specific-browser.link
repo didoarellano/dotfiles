@@ -17,5 +17,13 @@ if [ $name = "tweetdeck" ]; then
     url="https://$name.twitter.com"
 fi
 
+if [ $name = "toggl" ]; then
+    url="$url/app"
+fi
+
+if [ $name = "devdocs" ]; then
+    url="http://$name.io"
+fi
+
 cmd="chromium --app=$url --user-data-dir=$profile_dir"
 exec $cmd

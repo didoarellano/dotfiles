@@ -1,11 +1,14 @@
 {
-    "browser": true,
-    "jquery": true,
-    "node": true,
-    "strict": true,
-    "curly": false,
-    "eqeqeq": true,
-    "eqnull": true,
-    "expr": true,
-    "bitwise": true
+  "boss": true,
+  "camelcase": true,
+  "curly": true,
+  "eqnull": true,
+  "esnext": true,
+  "immed": true,
+  "latedef": true,
+  "newcap": true,
+  "noarg": true,
+  "strict": true,
+  "undef": true,
+  "unused": "vars"
 }

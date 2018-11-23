@@ -43,8 +43,8 @@ zstyle ':dotzsh:load' dzmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'ssh' \
   'theme' \
+  # 'ssh' \
 
 # Set the theme to load.
 # Setting it to 'random' loads a random theme.
@@ -63,7 +63,12 @@ source "$DOTZSH/init.zsh"
 # autoload -U compinit
 # compinit
 
-export EDITOR=vim
+unalias e
+export VISUAL="emacsclient -c"
+export EDITOR="emacsclient -nw"
+alias e="emacsclient -c"
+alias ee="emacsclient -nw"
+alias E="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
 
 export TERM=xterm-256color
 
@@ -76,6 +81,9 @@ alias l1="ls -1a"
 alias rmdsstore='find . -name *.DS_Store -type f -delete'
 alias g="git"
 alias t="tmux"
+
+alias snode="/usr/bin/nodejs"
+alias snpm="/usr/bin/npm"
 
 # This works okay. The problem is with the prompt and pwd not "following"
 # symlinks, i.e. `cd dotfiles` results in ~/bookmarks/dotfiles not
@@ -125,7 +133,34 @@ function md() {
     cd "$*"
 }
 
-source "$HOME/.nvm/nvm.sh"
+source "$HOME/lib/nvm/nvm.sh"
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 
 alias clip="xclip -selection clipboard"
+alias open="xdg-open"
+
+eval "$(fasd --init auto)"
+alias s="ls"
+
+#alias groot="cd $(git rev-parse --show-toplevel)"
+
+alias webcam="guvcview"
+# alias sleep="sudo pm-suspend"
+
+eval $(keychain --quick --quiet --eval --agents ssh id_rsa)
+
+# added by travis gem
+[ -f /home/dido/.travis/travis.sh ] && source /home/dido/.travis/travis.sh
+
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
+export PATH="$HOME/.local/bin:$PATH"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /home/dido/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/dido/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /home/dido/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /home/dido/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+alias dokku='bash $HOME/lib/dokku/contrib/dokku_client.sh --rm'

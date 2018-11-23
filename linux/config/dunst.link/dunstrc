@@ -10,7 +10,7 @@
     alignment = center
     show_age_threshold = 60
     sticky_history = yes
-    follow = mouse
+    follow = none
     word_wrap = yes
     padding = 10
     horizontal_padding = 10
@@ -18,13 +18,13 @@
     separator_height = 0
 
 [urgency_low]
-    background = "#526060"
-    foreground = "#cccccc"
-    timeout = 30
-
-[urgency_normal]
     background = "#95a5a6"
     foreground = "#111111"
+    timeout = 5
+
+[urgency_normal]
+    background = "#526060"
+    foreground = "#ffffff"
     timeout = 45
 
 [urgency_critical]

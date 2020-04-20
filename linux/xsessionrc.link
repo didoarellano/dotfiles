@@ -1,5 +1,0 @@
-# -*- mode: sh -*-
-
-export PATH=$HOME/bin:$PATH
-synclient TouchpadOff=1
-$HOME/bin/trackpoint-scroll

@@ -1,0 +1,8 @@
+* Dido's dotfiles
+
+** Install
+
+#+BEGIN_SRC
+  stow -vt /home/$(whoami) {packagename}
+#+End_SRC
+

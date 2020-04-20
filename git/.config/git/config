@@ -1,0 +1,50 @@
+[user]
+    email = didoarellano@gmail.com
+    name = Dido L. Arellano
+
+[core]
+    autocrlf = input
+    pager = /usr/share/git/diff-highlight/diff-highlight | less -r
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = true
+    pager = true
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[alias]
+    s = status
+    l = log --graph --pretty='format:%C(magenta)%h%Cred%d%Creset %s.%C(white) %an, %ar%Creset'
+    lrecent = log --since='yesterday' --author='Dido' --pretty=format:'%C(magenta)%h %C(white)%ar %Creset%s'
+    fr = !git fetch && git rebase origin/master
+    c = commit
+    cm = commit --message
+    cam = commit --all --message
+    co = checkout
+    br = branch
+    ds = diff --cached
+    dc = diff --cached
+    first = commit --allow-empty -m 'Initial, empty commit'
+    start = !git init && git first
+    changes = !git diff --stat $(git log --pretty=format:%H | tail -1)
+
+[push]
+    default = simple

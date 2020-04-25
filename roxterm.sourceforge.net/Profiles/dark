@@ -1,0 +1,17 @@
+[roxterm profile]
+colour_scheme=Tango
+hide_menubar=1
+show_resize_grip=0
+always_show_tabs=0
+show_add_tab_btn=0
+allow_bold=0
+audible_bell=0
+visible_bell=1
+cursor_blink_mode=2
+background_type=0
+saturation=1.000000
+scrollbar_pos=0
+font=Fira Mono Medium 10
+disable_tab_menu_shortcuts=1
+tab_close_btn=0
+scroll_on_keystroke=1

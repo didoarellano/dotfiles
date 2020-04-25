@@ -1,0 +1,9 @@
+[roxterm options]
+only_warn_running=1
+warn_close=1
+colour_scheme=Custom
+edit_shortcuts=1
+encoding=UTF-8
+prefer_dark_theme=0
+profile=light
+shortcut_scheme=Mine

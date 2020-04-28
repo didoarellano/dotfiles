@@ -1,0 +1,9 @@
+[Unit]
+Description=Standalone compositor for Xorg
+
+[Service]
+ExecStart=/usr/bin/picom
+Restart=always
+
+[Install]
+WantedBy=default.target

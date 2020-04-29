@@ -1,0 +1,9 @@
+[Unit]
+Description=Prevent screensaver and display sleep
+
+[Service]
+ExecStart=/usr/bin/caffeine
+Restart=always
+
+[Install]
+WantedBy=default.target

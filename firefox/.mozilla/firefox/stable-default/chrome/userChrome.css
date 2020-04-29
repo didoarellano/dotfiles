@@ -1,0 +1,82 @@
+:root {
+  --x-sidebar-width: 280px;
+
+  --toolbox-border-bottom-color: #ccc !important;
+  --tabs-border-color: #ccc !important;
+
+  /* URL bar border radius */
+  --toolbarbutton-border-radius: 0px !important;
+}
+
+/* Move the url bar to the bottom */
+#browser {
+  -moz-box-ordinal-group: 0 !important;
+}
+
+/* Hide tabs */
+#TabsToolbar {
+  visibility: collapse !important;
+}
+
+#sidebar-box {
+  width: var(--x-sidebar-width) !important;
+
+  /* Raise the sidebar above the urlbar */
+  position: relative !important;
+  z-index: 100 !important;
+}
+
+/* Hide Tree Style Tab's sidebar header */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+  display: none !important;
+}
+
+#sidebar-splitter {
+  width: 0px !important;
+  border: none !important;
+  border-right: 1px solid var(--tabs-border-color) !important;
+}
+
+#navigator-toolbox {
+  margin-left: var(--x-sidebar-width) !important;
+  border-bottom-width: 0px !important;
+
+  /* Push toolbar down to allow sidebar tabs to extend all the way to the bottom
+     of the browser frame */
+  margin-top: -32px !important;
+}
+
+#nav-bar {
+  box-shadow: none !important;
+}
+
+#titlebar {
+  border-top: 1px solid var(--tabs-border-color) !important;
+  border-left: 1px solid var(--tabs-border-color) !important;
+  background-color: var(--toolbar-bgcolor) !important;
+}
+
+#urlbar-container {
+  margin-left: 0px !important;
+}
+
+#urlbar {
+  background: transparent !important;
+  border: none !important;
+}
+
+#urlbar-input-container .urlbar-history-dropmarker {
+  display: none !important;
+}
+
+/*
+Push up statuspanel (the thing that shows the url of the link we're hovering
+on) and "search in page" toolbar to offset the whole toolbar being pushed
+down.
+*/
+#statuspanel {
+  bottom: 32px !important;
+}
+.findbar-container, .findbar-closebutton.close-icon {
+  margin-bottom: 32px !important;
+}

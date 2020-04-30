@@ -65,8 +65,14 @@
   border: none !important;
 }
 
+#pageActionSeparator,
+#urlbar-zoom-button,
 #urlbar-input-container .urlbar-history-dropmarker {
   display: none !important;
+}
+
+#tracking-protection-icon-container {
+  border: none !important;
 }
 
 /*

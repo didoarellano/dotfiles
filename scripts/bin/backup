@@ -1,0 +1,18 @@
+#!/bin/sh
+
+borg create \
+    --verbose \
+    --list \
+    --stats \
+    --filter AME \
+    --exclude-caches \
+    --exclude "/home/dido/.*" \
+    --pattern +.mozilla \
+    --pattern +.ssh \
+    --pattern +.config \
+    --exclude /home/dido/Videos \
+    --exclude /home/dido/Downloads \
+    --exclude /home/dido/Documents/ViberDownloads \
+    --exclude /home/dido/Documents/Zoom \
+    /run/media/dido/backup-1/tattletale/::home-$(date --iso) \
+    /home/dido

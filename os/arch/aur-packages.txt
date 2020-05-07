@@ -1,0 +1,14 @@
+caffeine-ng
+dtrx
+figma-linux
+firefox-tridactyl-native
+git-extras
+google-chrome-dev
+lightdm-mini-greeter
+ncurses5-compat-libs
+nodejs-git-stats
+nodejs-git-stats-html
+nodejs-git-stats-importer
+viber
+yay
+zoom

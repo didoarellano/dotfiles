@@ -4,7 +4,10 @@
 
 [core]
     autocrlf = input
-    pager = /usr/share/git/diff-highlight/diff-highlight | less -r
+    pager = delta --theme="GitHub"
+
+[interactive]
+    diffFilter = delta --color-only
 
 [color]
     diff = auto

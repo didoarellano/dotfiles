@@ -2,6 +2,7 @@ caffeine-ng
 dtrx
 figma-linux
 firefox-tridactyl-native
+git-delta
 git-extras
 google-chrome-dev
 lightdm-mini-greeter

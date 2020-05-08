@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+out_dir=/home/dido/src/dotfiles/os/arch/packages
+pacman_list="$out_dir/pacman-packages.txt"
+aur_list="$out_dir/aur-packages.txt"
+
+mkdir -p $out_dir
+touch -a $pacman_list
+touch -a $aur_list
+
+pacman -Qqen > $pacman_list
+pacman -Qqem > $aur_list

@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Depends = coreutils
+When = PostTransaction
+Exec = /home/dido/bin/update-package-lists

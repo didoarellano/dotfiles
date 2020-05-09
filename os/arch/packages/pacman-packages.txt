@@ -88,3 +88,6 @@ xorg-server
 xorg-xev
 xorg-xrandr
 youtube-dl
+zathura
+zathura-cb
+zathura-pdf-mupdf

@@ -15,4 +15,5 @@ borg create \
     --exclude /home/dido/Documents/ViberDownloads \
     --exclude /home/dido/Documents/Zoom \
     /run/media/dido/backup-1/tattletale/::home-$(date --iso) \
-    /home/dido
+    /home/dido \
+    /etc

@@ -257,6 +257,7 @@ assign [title="Slack"] 10
 # for_window [class="Xfce4-notifyd"] floating enable border 1pixel
 for_window [class="Firefox" window_role="About"] floating enable
 for_window [class="Firefox" window_role="SessionPrompt"] floating enable
+for_window [class="firefox" title="Sign in - Google Accounts - Mozilla Firefox"] floating enable
 
 # Thunar file operation progress
 for_window [class="Thunar" title="File Operation Progress"] floating enable

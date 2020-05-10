@@ -8,6 +8,8 @@ borg
 celluloid
 chromium
 clang
+deluge
+deluge-gtk
 efibootmgr
 emacs
 fakeroot

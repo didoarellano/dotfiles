@@ -2,6 +2,7 @@ caffeine-ng
 dtrx
 figma-linux
 firefox-tridactyl-native
+font-manager
 git-delta
 git-extras
 google-chrome-dev

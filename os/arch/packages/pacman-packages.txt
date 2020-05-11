@@ -75,8 +75,6 @@ ttf-croscore
 ttf-droid
 ttf-fira-code
 ttf-fira-mono
-ttf-fira-sans
-ttf-roboto
 udiskie
 unclutter
 unrar

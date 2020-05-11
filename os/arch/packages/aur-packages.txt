@@ -10,6 +10,7 @@ ncurses5-compat-libs
 nodejs-git-stats
 nodejs-git-stats-html
 nodejs-git-stats-importer
+ttf-google-fonts-typewolf
 viber
 yay
 zoom

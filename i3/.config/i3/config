@@ -27,7 +27,7 @@ floating_modifier $mod
 # bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec kitty
 # bindsym $mod+ctrl+Mod1+Return exec roxterm --separate --profile=dark
-bindsym $mod+Shift+Return exec emacsclient --create-frame --alternate-editor=""
+bindsym $mod+Shift+Return exec emacsclient --create-frame --alternate-editor="" --eval "(--shrink-modeline)"
 
 # kill focused window
 bindsym $mod+Shift+q kill

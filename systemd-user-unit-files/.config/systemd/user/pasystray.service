@@ -1,0 +1,9 @@
+[Unit]
+Description=System tray applet for PulseAudio
+
+[Service]
+ExecStart=/usr/bin/pasystray
+Restart=always
+
+[Install]
+WantedBy=default.target

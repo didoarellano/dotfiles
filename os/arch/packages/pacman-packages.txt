@@ -56,6 +56,7 @@ noto-fonts-emoji
 npm
 obs-studio
 pacman
+pasystray
 patch
 pavucontrol
 picom

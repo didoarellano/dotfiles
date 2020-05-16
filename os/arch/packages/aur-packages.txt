@@ -5,6 +5,7 @@ firefox-tridactyl-native
 font-manager
 git-delta
 git-extras
+git-ftp
 google-chrome-dev
 lightdm-mini-greeter
 ncurses5-compat-libs

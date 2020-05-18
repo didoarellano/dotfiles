@@ -1,0 +1,9 @@
+[Unit]
+Description=Password manager
+
+[Service]
+ExecStart=/usr/bin/keepassxc
+Restart=always
+
+[Install]
+WantedBy=default.target

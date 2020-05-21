@@ -12,6 +12,7 @@ ncurses5-compat-libs
 nodejs-git-stats
 nodejs-git-stats-html
 nodejs-git-stats-importer
+synfigstudio-appimage
 ttf-google-fonts-typewolf
 viber
 yay

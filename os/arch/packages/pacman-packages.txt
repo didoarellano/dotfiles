@@ -11,6 +11,8 @@ clang
 deluge
 deluge-gtk
 discord
+docker
+docker-compose
 efibootmgr
 emacs
 fakeroot

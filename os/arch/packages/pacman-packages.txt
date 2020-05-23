@@ -85,6 +85,10 @@ unrar
 unzip
 usbutils
 vim
+virtualbox
+virtualbox-guest-iso
+virtualbox-guest-utils
+virtualbox-host-modules-arch
 vlc
 wget
 which

@@ -58,6 +58,7 @@ noto-fonts-emoji
 npm
 obs-studio
 pacman
+paprefs
 pasystray
 patch
 pavucontrol
@@ -72,6 +73,7 @@ scrot
 sed
 stow
 sudo
+swh-plugins
 systemd-swap
 texinfo
 tree

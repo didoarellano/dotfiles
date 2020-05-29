@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Android Studio
+Exec=/home/dido/src/android-studio/bin/studio.sh %f
+Icon=/home/dido/src/android-studio/bin/studio.svg
+Comment=The official Android IDE
+Categories=Development;IDE;
+Terminal=false
+StartupNotify=true
+StartupWMClass=jetbrains-studio
+MimeType=application/x-extension-iml;

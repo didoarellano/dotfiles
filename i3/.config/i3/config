@@ -292,15 +292,15 @@ for_window [instance="system-config-printer.py"] floating enable
 # #708CA2
 # 528CCB
 # Colors
-# class                 border  backgr. text    indicator
+# class                 border  backgr. text    indicator child_border
 # client.focused          #5f87af #5f87af #ffffff #5f87af
 # client.focused          #4682b4 #4682b4 #ffffff #4682b4
 # client.focused          #4682b4 #4682b4 #ffffff #4682b4
-client.focused          #ffffff #ffffff #000000 #ffffff
+client.focused          #ffffff #ffffff #000000 #ffffff  #ffffff
 # client.focused_inactive #444444 #444444 #ededed #292d2e
-client.focused_inactive #000000 #000000 #ededed #292d2e
+client.focused_inactive #444444 #444444 #ededed #292d2e #ffffff
 # client.focused_inactive #444444 #444444 #ededed #292d2e
-client.unfocused        #000000 #000000 #ededed #292d2e
+client.unfocused        #444444 #444444 #ededed #292d2e #ffffff
 # client.unfocused        #444444 #444444 #ededed #292d2e
 client.urgent           #e74c3c #e74c3c #111111 #e74c3c
 
@@ -308,6 +308,8 @@ default_border none
 gaps inner 6
 smart_gaps on
 # smart_borders no_gaps
+
+for_window [class="Emacs"] border pixel 6
 
 # exec dropbox start
 # exec ~/bin/menutray -g -i

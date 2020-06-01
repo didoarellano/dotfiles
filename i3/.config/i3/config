@@ -269,10 +269,6 @@ for_window [class="Firefox" title="https://pinboard.in - Pinboard - Save a Bookm
 for_window [instance="^bashrun2-run-dialog$" class="^XTerm$"] border 1pixel floating enable resize shrink height 10px
 for_window [class="Wicd-client.py"] floating enable
 
-# Hide window title in Chrom{e,ium} because they're ugly.
-for_window [window_role="browser" class="^google-chrome.*"] border 1pixel # pixel 3
-for_window [window_role="browser" class="Chromium"] border 1pixel # pixel 3
-
 for_window [class="Qalculate"] floating enable
 for_window [class="net-pms-PMS" title="^Universal Media Server"] floating enable
 
@@ -308,7 +304,7 @@ client.unfocused        #000000 #000000 #ededed #292d2e
 # client.unfocused        #444444 #444444 #ededed #292d2e
 client.urgent           #e74c3c #e74c3c #111111 #e74c3c
 
-for_window [class="^.*"] border pixel 2
+default_border none
 gaps inner 6
 smart_gaps on
 # smart_borders no_gaps

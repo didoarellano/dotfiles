@@ -42,7 +42,6 @@ bindsym $mod+Shift+q kill
 # bindsym Mod1+space exec bashrun2 toggle
 # bindsym Mod1+space exec --no-startup-id zsh -c "responsive-rofi run"
 # bindsym Mod1+ctrl+space exec --no-startup-id zsh -c "responsive-rofi window"
-bindsym Mod1+space exec rofi -show run
 
 # Turn off focus follows mouse
 focus_follows_mouse no

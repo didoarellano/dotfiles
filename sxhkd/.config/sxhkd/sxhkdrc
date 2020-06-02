@@ -3,3 +3,6 @@ alt + space
 
 alt + Return
     kitty
+
+alt + shift + Return
+    emacsclient --create-frame --alternate-editor="" --eval "(--initial-frame-setup)"

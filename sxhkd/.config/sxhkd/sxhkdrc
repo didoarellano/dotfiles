@@ -1,2 +1,5 @@
 alt + space
     rofi -show run
+
+alt + Return
+    kitty

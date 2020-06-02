@@ -75,6 +75,7 @@ sed
 stow
 sudo
 swh-plugins
+sxhkd
 systemd-swap
 texinfo
 tree

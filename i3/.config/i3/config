@@ -297,7 +297,7 @@ for_window [instance="system-config-printer.py"] floating enable
 # client.focused          #4682b4 #4682b4 #ffffff #4682b4
 client.focused          #ffffff #ffffff #000000 #ffffff  #ffffff
 # client.focused_inactive #444444 #444444 #ededed #292d2e
-client.focused_inactive #444444 #444444 #ededed #292d2e #ffffff
+client.focused_inactive #444444 #444444 #ededed #ffffff #ffffff
 # client.focused_inactive #444444 #444444 #ededed #292d2e
 client.unfocused        #444444 #444444 #ededed #292d2e #ffffff
 # client.unfocused        #444444 #444444 #ededed #292d2e

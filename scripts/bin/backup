@@ -15,7 +15,7 @@ borg create \
     --exclude /home/dido/Documents/ViberDownloads \
     --exclude /home/dido/Documents/Zoom \
     --exclude /home/dido/Android \
-    --exclude /home/src/doom-emacs/.local \
+    --exclude /home/dido/src/doom-emacs/.local \
     /run/media/dido/backup-1/tattletale/::home-$(date --iso=hours) \
     /home/dido \
     /etc

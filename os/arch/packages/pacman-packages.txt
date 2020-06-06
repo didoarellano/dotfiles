@@ -48,6 +48,7 @@ linux-firmware
 m4
 make
 man-db
+marked
 mpv
 nautilus
 neofetch

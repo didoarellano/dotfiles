@@ -20,5 +20,6 @@ shellcheck-bin
 synfigstudio-appimage
 ttf-google-fonts-typewolf
 viber
+visual-studio-code-bin
 yay
 zoom

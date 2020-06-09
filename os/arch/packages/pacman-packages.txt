@@ -97,6 +97,7 @@ virtualbox-host-modules-arch
 vlc
 wget
 which
+xautomation
 xorg-server
 xorg-xev
 xorg-xrandr

@@ -19,6 +19,7 @@ python-grip
 shellcheck-bin
 synfigstudio-appimage
 ttf-google-fonts-typewolf
+typescript-language-server-bin
 viber
 visual-studio-code-bin
 yay

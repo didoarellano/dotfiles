@@ -285,6 +285,7 @@ for_window [title="Tree Style Tab Configuration"] floating enable
 for_window [instance="android-file-transfer"] floating enable
 for_window [class="Blueman-manager"] floating enable
 for_window [instance="system-config-printer.py"] floating enable
+for_window [title=".*Emulator.*"] floating enable
 
 # #3465a4
 # #5F87AF

@@ -37,6 +37,7 @@
     s = status
     l = log --graph --pretty='format:%C(magenta)%h%Cred%d%Creset %s.%C(white) %an, %ar%Creset'
     lrecent = log --since='yesterday' --author='Dido' --pretty=format:'%C(magenta)%h %C(white)%ar %Creset%s'
+    today = log --since='10am' --author='Dido' --pretty=format:'%C(magenta)%h %C(white)%ar %Creset%s'
     fr = !git fetch && git rebase origin/master
     c = commit
     cm = commit --message

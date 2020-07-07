@@ -17,6 +17,7 @@ nodejs-git-stats-html
 nodejs-git-stats-importer
 nvm
 python-grip
+responsively-bin
 shellcheck-bin
 synfigstudio-appimage
 ttf-google-fonts-typewolf

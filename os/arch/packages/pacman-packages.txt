@@ -67,6 +67,7 @@ pavucontrol
 picom
 pkgconf
 pulseaudio
+python-pip
 ranger
 redshift
 ripgrep

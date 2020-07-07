@@ -9,6 +9,7 @@ git-extras
 git-ftp
 google-chrome-dev
 gotop-bin
+js-beautify
 lightdm-mini-greeter
 ncurses5-compat-libs
 nodejs-git-stats

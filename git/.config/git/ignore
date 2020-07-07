@@ -1,5 +1,5 @@
 .dir-locals.el
-IGNORE
+.ignore/
 
 # Typescript language server logs
 .log/

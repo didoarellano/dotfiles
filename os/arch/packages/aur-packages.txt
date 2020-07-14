@@ -27,4 +27,5 @@ visual-studio-code-bin
 vscode-css-languageserver-bin
 vscode-html-languageserver-bin
 yay
+zeal
 zoom

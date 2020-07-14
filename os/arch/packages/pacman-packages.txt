@@ -46,6 +46,7 @@ libtool
 lightdm
 linux
 linux-firmware
+lsd
 m4
 make
 man-db

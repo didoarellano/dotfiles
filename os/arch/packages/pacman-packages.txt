@@ -8,6 +8,7 @@ borg
 celluloid
 chromium
 clang
+ddcutil
 deluge
 deluge-gtk
 discord

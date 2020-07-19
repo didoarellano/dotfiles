@@ -104,6 +104,7 @@ which
 xautomation
 xorg-server
 xorg-xev
+xorg-xinput
 xorg-xrandr
 youtube-dl
 zathura

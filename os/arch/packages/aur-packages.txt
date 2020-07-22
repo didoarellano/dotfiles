@@ -1,3 +1,4 @@
+audio-recorder
 caffeine-ng
 dtrx
 ferdi-bin

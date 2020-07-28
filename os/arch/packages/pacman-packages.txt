@@ -105,6 +105,7 @@ vlc
 wget
 which
 xautomation
+xdotool
 xorg-server
 xorg-xev
 xorg-xinput

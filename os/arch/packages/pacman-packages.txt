@@ -71,6 +71,7 @@ picom
 pkgconf
 pulseaudio
 python-pip
+qemu
 ranger
 redshift
 ripgrep
@@ -95,6 +96,7 @@ unrar
 unzip
 usbutils
 vim
+virt-manager
 virtualbox
 virtualbox-guest-iso
 virtualbox-guest-utils

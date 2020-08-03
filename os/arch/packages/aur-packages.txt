@@ -1,6 +1,7 @@
 audio-recorder
 caffeine-ng
 dtrx
+epsxe
 ferdi-bin
 figma-linux
 firefox-tridactyl-native

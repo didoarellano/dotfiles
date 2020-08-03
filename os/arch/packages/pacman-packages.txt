@@ -53,6 +53,7 @@ m4
 make
 man-db
 marked
+mgba-qt
 mpv
 nautilus
 neofetch

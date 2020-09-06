@@ -11,6 +11,7 @@ clang
 ddcutil
 deluge
 deluge-gtk
+digikam
 discord
 docker
 docker-compose

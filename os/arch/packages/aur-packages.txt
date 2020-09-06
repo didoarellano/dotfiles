@@ -5,6 +5,7 @@ epsxe
 ferdi-bin
 figma-linux
 firefox-tridactyl-native
+flashfocus-git
 font-manager
 git-delta
 git-extras

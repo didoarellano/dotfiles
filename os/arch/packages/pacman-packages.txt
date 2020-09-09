@@ -32,6 +32,7 @@ gcc
 gettext
 gimp
 git
+gpick
 grep
 groff
 grub

@@ -61,6 +61,7 @@ nautilus
 neofetch
 network-manager-applet
 networkmanager
+nnn
 noto-fonts
 noto-fonts-emoji
 npm

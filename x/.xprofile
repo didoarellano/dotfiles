@@ -1,4 +1,4 @@
 #!/bin/sh
 
 xrandr --output HDMI-2  --mode 1920x1080 --primary \
-       --output DVI-D-1 --mode 1920x1080 --left-of HDMI-2
+       --output DVI-D-1 --mode 1920x1080 --right-of HDMI-2

@@ -13,6 +13,7 @@ deluge
 deluge-gtk
 digikam
 discord
+dnsmasq
 docker
 docker-compose
 earlyoom

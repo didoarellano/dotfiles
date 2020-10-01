@@ -26,6 +26,7 @@ file
 findutils
 firefox
 firefox-developer-edition
+fish
 flameshot
 flex
 gawk

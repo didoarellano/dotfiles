@@ -23,6 +23,7 @@ nvm
 python-grip
 responsively-bin
 shellcheck-bin
+starship
 synfigstudio-appimage
 ttf-google-fonts-typewolf
 typescript-language-server-bin

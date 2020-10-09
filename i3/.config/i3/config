@@ -151,6 +151,8 @@ bindsym $mod+minus scratchpad show
 # title="DDD"
 # window_type="EEE" (normal, dialog, utility, toolbar, splash, menu, dropdown_menu, popup_menu, tooltip, notification)
 
+for_window [title="  \*Minibuf-0\*"] move scratchpad
+
 for_window [title="music - ncmpcpp"] move scratchpad
 bindsym $mod+m [title="music - ncmpcpp"] scratchpad show
 

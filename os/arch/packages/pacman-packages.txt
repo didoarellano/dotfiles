@@ -70,6 +70,7 @@ noto-fonts-emoji
 npm
 obs-studio
 pacman
+pacman-contrib
 paprefs
 pasystray
 patch

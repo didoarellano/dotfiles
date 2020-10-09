@@ -15,6 +15,7 @@ gotop-bin
 js-beautify
 lightdm-mini-greeter
 ncurses5-compat-libs
+nerd-fonts-fira-mono
 nodejs-git-stats
 nodejs-git-stats-html
 nodejs-git-stats-importer
@@ -25,7 +26,8 @@ responsively-bin
 shellcheck-bin
 starship
 synfigstudio-appimage
-ttf-google-fonts-typewolf
+ttf-google-fonts-git
+ttf-mac-fonts
 typescript-language-server-bin
 viber
 visual-studio-code-bin

@@ -82,6 +82,7 @@ python-pip
 qemu
 ranger
 redshift
+reflector
 ripgrep
 rofi
 rsync

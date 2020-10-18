@@ -2,6 +2,7 @@ alsa-utils
 autoconf
 automake
 base
+bind
 binutils
 bison
 borg

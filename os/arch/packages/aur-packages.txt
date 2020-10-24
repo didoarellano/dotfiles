@@ -22,6 +22,7 @@ nodejs-git-stats-html
 nodejs-git-stats-importer
 noisetorch-bin
 nvm
+protonvpn-cli-ng
 python-grip
 responsively-bin
 shellcheck-bin

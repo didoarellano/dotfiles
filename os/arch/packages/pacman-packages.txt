@@ -114,6 +114,7 @@ virtualbox-guest-iso
 virtualbox-guest-utils
 virtualbox-host-modules-arch
 vlc
+w3m
 wget
 which
 xautomation

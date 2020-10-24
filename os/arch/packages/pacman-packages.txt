@@ -2,6 +2,7 @@ alsa-utils
 autoconf
 automake
 base
+bat
 bind
 binutils
 bison

@@ -51,6 +51,7 @@ htop
 i3-gaps
 i3blocks
 imagemagick
+inkscape
 kdenlive
 keepassxc
 kitty

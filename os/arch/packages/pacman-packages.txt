@@ -67,6 +67,7 @@ man-db
 marked
 mgba-qt
 mpv
+ncdu
 neofetch
 network-manager-applet
 networkmanager

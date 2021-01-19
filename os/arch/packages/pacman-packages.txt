@@ -90,6 +90,7 @@ qemu
 ranger
 redshift
 reflector
+renameutils
 ripgrep
 rofi
 rsync

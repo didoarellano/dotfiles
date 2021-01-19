@@ -19,6 +19,8 @@ discord
 dnsmasq
 docker
 docker-compose
+dolphin
+dolphin-plugins
 earlyoom
 efibootmgr
 emacs
@@ -64,7 +66,6 @@ man-db
 marked
 mgba-qt
 mpv
-nautilus
 neofetch
 network-manager-applet
 networkmanager

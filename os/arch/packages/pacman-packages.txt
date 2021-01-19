@@ -102,6 +102,7 @@ swh-plugins
 sxhkd
 systemd-swap
 texinfo
+tig
 tree
 ttf-croscore
 ttf-droid

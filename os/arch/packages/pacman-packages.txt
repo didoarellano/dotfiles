@@ -39,6 +39,7 @@ gcc
 gettext
 gimp
 git
+git-lfs
 github-cli
 gparted
 gpick

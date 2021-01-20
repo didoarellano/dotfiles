@@ -47,6 +47,7 @@ grep
 groff
 grub
 guvcview
+gwenview
 gzip
 htop
 i3-gaps

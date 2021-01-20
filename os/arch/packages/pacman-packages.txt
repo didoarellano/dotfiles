@@ -126,6 +126,7 @@ w3m
 wget
 which
 xautomation
+xclip
 xdotool
 xorg-server
 xorg-xev

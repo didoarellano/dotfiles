@@ -1,4 +1,5 @@
 audio-recorder
+bfg
 caffeine-ng
 dtrx
 epsxe

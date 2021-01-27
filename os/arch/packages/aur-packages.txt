@@ -6,6 +6,7 @@ epsxe
 feem
 ferdi-bin
 figma-linux
+filmulator
 firefox-tridactyl-native
 flashfocus-git
 font-manager

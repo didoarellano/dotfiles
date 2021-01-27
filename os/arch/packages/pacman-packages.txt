@@ -89,6 +89,7 @@ pkgconf
 pulseaudio
 python-pip
 qemu
+qutebrowser
 ranger
 redshift
 reflector

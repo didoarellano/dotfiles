@@ -28,6 +28,7 @@ fakeroot
 fd
 feh
 file
+filezilla
 findutils
 firefox
 firefox-developer-edition

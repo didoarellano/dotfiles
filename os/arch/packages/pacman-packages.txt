@@ -82,6 +82,7 @@ obs-studio
 pacman
 pacman-contrib
 paprefs
+partitionmanager
 pasystray
 patch
 pavucontrol

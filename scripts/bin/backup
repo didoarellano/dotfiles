@@ -12,6 +12,7 @@ borg create \
     --pattern +.config \
     --exclude /home/dido/Videos \
     --exclude /home/dido/Vlogs \
+    --exclude /home/dido/andfreshtarts \
     --exclude /home/dido/Downloads \
     --exclude /home/dido/Documents/ViberDownloads \
     --exclude /home/dido/Documents/Zoom \

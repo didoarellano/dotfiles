@@ -1,23 +1,47 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-borg create \
-    --verbose \
-    --list \
-    --stats \
-    --filter AME \
-    --exclude-caches \
-    --exclude "/home/dido/.*" \
-    --pattern +.mozilla \
-    --pattern +.ssh \
-    --pattern +.config \
-    --exclude /home/dido/Videos \
-    --exclude /home/dido/Vlogs \
-    --exclude /home/dido/andfreshtarts \
-    --exclude /home/dido/Downloads \
-    --exclude /home/dido/Documents/ViberDownloads \
-    --exclude /home/dido/Documents/Zoom \
-    --exclude /home/dido/Android \
-    --exclude /home/dido/src/doom-emacs/.local \
-    --exclude /home/dido/bin/node_modules \
-    /run/media/dido/backup-1/tattletale/::home-$(date --iso=hours) \
-    /home/dido
+backup_files() {
+    borg create \
+        --verbose \
+        --list \
+        --stats \
+        --filter AME \
+        --exclude-caches \
+        --exclude "/home/dido/.*" \
+        --pattern +.mozilla \
+        --pattern +.ssh \
+        --pattern +.config \
+        --exclude /home/dido/Videos \
+        --exclude /home/dido/Vlogs \
+        --exclude /home/dido/andfreshtarts \
+        --exclude /home/dido/Downloads \
+        --exclude /home/dido/Documents/ViberDownloads \
+        --exclude /home/dido/Documents/Zoom \
+        --exclude /home/dido/Android \
+        --exclude /home/dido/src/doom-emacs/.local \
+        --exclude /home/dido/bin/node_modules \
+        "/run/media/dido/backup-1/tattletale/::home-$(date --iso=hours)" \
+        /home/dido
+}
+
+backup_andfreshtarts() {
+    borg create \
+        --verbose \
+        --list \
+        --stats \
+        --filter AME \
+        "/run/media/dido/backup-2/vlog/::$(date --iso=hours)" \
+        /home/dido/andfreshtarts \
+        /stash/andfreshtarts
+}
+
+
+target=$1
+
+if [ "$target" = 'files' ]; then
+    backup_files
+elif [ "$target" = 'andfreshtarts' ]; then
+    backup_andfreshtarts
+else
+    echo "What do you want to backup? \"files\" or \"andfreshtarts\"?"
+fi

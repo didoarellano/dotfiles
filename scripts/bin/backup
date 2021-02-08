@@ -20,5 +20,4 @@ borg create \
     --exclude /home/dido/src/doom-emacs/.local \
     --exclude /home/dido/bin/node_modules \
     /run/media/dido/backup-1/tattletale/::home-$(date --iso=hours) \
-    /home/dido \
-    /etc
+    /home/dido

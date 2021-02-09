@@ -30,7 +30,7 @@ backup_andfreshtarts() {
         --list \
         --stats \
         --filter AME \
-        "/run/media/dido/backup-2/vlog/::$(date --iso=hours)" \
+        "/run/media/dido/backup-2/andfreshtarts/::$(date --iso=hours)" \
         /home/dido/andfreshtarts \
         /stash/andfreshtarts
 }

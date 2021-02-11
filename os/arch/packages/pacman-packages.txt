@@ -36,6 +36,7 @@ firefox-developer-edition
 fish
 flameshot
 flex
+fzf
 gawk
 gcc
 gettext

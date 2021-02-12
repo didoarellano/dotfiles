@@ -8,6 +8,7 @@ ferdi-bin
 figma-linux
 filmulator
 firefox-tridactyl-native
+fisher
 flashfocus-git
 font-manager
 git-delta

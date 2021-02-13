@@ -110,6 +110,7 @@ sxhkd
 systemd-swap
 texinfo
 tig
+tldr
 tree
 ttf-croscore
 ttf-droid

@@ -11,6 +11,7 @@ borg
 celluloid
 chromium
 clang
+dbeaver
 ddcutil
 deluge
 deluge-gtk

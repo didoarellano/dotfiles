@@ -36,6 +36,7 @@ synfigstudio-appimage
 ttf-google-fonts-git
 ttf-mac-fonts
 typescript-language-server-bin
+ventoy-bin
 viber
 visual-studio-code-bin
 vscode-css-languageserver-bin

@@ -91,6 +91,7 @@ pavucontrol
 picom
 pkgconf
 pulseaudio
+pv
 python-pip
 qemu
 qutebrowser

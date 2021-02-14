@@ -69,6 +69,7 @@ lsd
 m4
 make
 man-db
+mariadb
 marked
 mgba-qt
 mpv

@@ -19,6 +19,7 @@ gotop-bin
 hunter
 js-beautify
 lightdm-mini-greeter
+mongodb-compass
 ncurses5-compat-libs
 nerd-fonts-fira-mono
 nodejs-git-stats
